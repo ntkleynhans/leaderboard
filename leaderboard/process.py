@@ -1,11 +1,12 @@
 from collections import defaultdict
 from functools import cmp_to_key
 
-class Table(object):
+
+class LeaderTable(object):
     def __init__(self, config):
         self.table = defaultdict(int)
         self.config = config
-    
+
     def collect(self, feed):
         """
             Collect results and process the team scores
@@ -42,6 +43,6 @@ class Table(object):
             Teams are racked by totals then by name (given the same totals)
         """
         entries = list(self.table.items())
-        entries.sort(key=cmp_to_key(Table.compare))
+        entries.sort(key=cmp_to_key(LeaderTable.compare))
         for team, score in entries:
-           yield f"{team}, {score} pts\n" 
+            yield f"{team}, {score} pts\n"

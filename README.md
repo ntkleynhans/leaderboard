@@ -29,7 +29,7 @@ Snakes, 1 pts
 
 ## Docker
 
-Make sure Docker is installed - [Docker Install Guid](https://docs.docker.com/get-docker/)
+Make sure Docker is installed - [Docker Install Guide](https://docs.docker.com/get-docker/)
 
 ### Build container
 ````bash
