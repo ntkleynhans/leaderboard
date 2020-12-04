@@ -1,14 +1,21 @@
 # LeaderBoard 
 
-This application process and set of provided results and generates a leaderboard
+This application processes a set of provided results and generates a leaderboard
 
 ## Requires
 
 * Python3
 
+## Setup
+
+````bash
+bash setup.sh && source pyenv/bin/activate
+````
+
 ## Execute
 
 ### With file
+
 ```bash
 python3 ranking_table.py data/in.sample.txt
 ```
@@ -37,6 +44,12 @@ Make sure Docker is installed - [Docker Install Guide](https://docs.docker.com/g
  ````
 
  ### Run script
-```bash
+````bash
 docker run -it ranking ranking_table.py data/in.sample.txt
+````
+
+## Tests
+
+````bash
+pytest --flake8
 ````
