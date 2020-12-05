@@ -1,5 +1,6 @@
 import pytest
 
+from leaderboard.data import Result
 from leaderboard.process import LeaderTable
 
 
@@ -14,7 +15,12 @@ def resource():
 
 class TestLeaderTable:
     def test_collect(self, resource):
-        data = [[['A', 'B'], [1, 0]], [['A', 'B'], [0, 0]]]
+        game_one = Result('A 1, B 0')
+        game_one.parse()
+        game_two = Result('A 0, B 0')
+        game_two.parse()
+
+        data = [game_one, game_two]
         resource.collect(data)
         assert resource.table['A'] == 4
         assert resource.table['B'] == 1

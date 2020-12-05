@@ -1,6 +1,7 @@
 import sys
 import argparse
 import logging
+import traceback
 
 from leaderboard.data import ResultsParser
 from leaderboard.process import LeaderTable
@@ -29,5 +30,5 @@ if __name__ == "__main__":
         table.collect(df)
         for team_entry in table.present():
             args.outfile.write(team_entry)
-    except Exception as e:
-        logger.error(str(e))
+    except Exception:
+        logger.error(traceback.format_exc())
